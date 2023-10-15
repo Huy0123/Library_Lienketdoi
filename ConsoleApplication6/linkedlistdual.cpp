@@ -28,9 +28,6 @@ bool linkedlistdual::addTail(ElementDual* a)
     return true;
 }
 
-
-
-
 void linkedlistdual::inputPolynomial() {
     string title;
     vector<string> authors; // Use a vector to store authors
@@ -53,7 +50,7 @@ void linkedlistdual::inputPolynomial() {
 
     cout << "Nhap ten tac gia (Nhap 'done' de ket thuc nhap tac gia, toi da 5 tac gia):\n";
     string author;
-    for (int i = 0; i < 5 &&authors.size() < 5; i++) {
+    for (int i = 0; i < 5; i++) {
         getline(cin, author);
         if (author == "done") {
             break;
@@ -98,7 +95,7 @@ int linkedlistdual::countBooksByAuthor(string authorName)
     int count = 0;
     ElementDual* current = head;
     while (current != nullptr) {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0;i < current->getAuthors().size(); i++) {
             if (current->getAuthors()[i] == authorName) {
                 count++;
                 break;
